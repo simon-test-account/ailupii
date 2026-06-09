@@ -1,0 +1,746 @@
+/* ========================================
+   STYLE.CSS - Felles styling for hele siden
+   ======================================== */
+
+/* Grunnleggende oppsett - gjelder hele siden */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: #2c2c2a;
+    background: #faf9f6;
+    padding: 20px;
+}
+
+/* Container - holder innholdet sentrert og lesbart */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Navigasjon øverst */
+nav {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e5e0;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #5f5e5a;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #2c2c2a;
+}
+
+nav a.aktiv {
+    color: #2c2c2a;
+    font-weight: 500;
+}
+
+nav .facebook-lenke {
+    margin-left: auto;
+}
+
+/* Overskrifter */
+h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+/* Vanlig brødtekst */
+p {
+    margin-bottom: 12px;
+}
+
+/* Liten tekst over hovedoverskrift */
+.meta-info {
+    font-size: 13px;
+    color: #888780;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+/* Kallenavn under hovedoverskrift */
+.kallenavn {
+    font-style: italic;
+    color: #5f5e5a;
+    margin-bottom: 24px;
+}
+
+/* Hovedbilde i hundeprofil */
+.hovedbilde-img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+/* Forsidebilde - mellom nav og overskrift */
+.forside-bilde {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    display: block;
+}
+
+/* Faktaboks med tabell */
+.faktaboks {
+    background: #f1efe8;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+.faktaboks table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.faktaboks td {
+    padding: 6px 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.faktaboks td:first-child {
+    color: #5f5e5a;
+    width: 40%;
+}
+
+/* Stamtavle - to bokser side om side */
+.stamtavle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.stamtavle .forelder {
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.stamtavle .label {
+    font-size: 12px;
+    color: #888780;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.stamtavle .navn {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.stamtavle .detalj {
+    font-size: 14px;
+    color: #5f5e5a;
+}
+
+/* ========================================
+   KULL-LISTE (på hundeprofiler)
+   ======================================== */
+.kull-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.kull-element {
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+/* Hover-effekt KUN på klikkbare kull-elementer */
+a.kull-element:hover {
+    border-color: #b4b2a9;
+    background: #faf9f6;
+}
+
+/* Ikke-klikkbare kull-element (ekstern/andre) - ser identiske ut, men ingen hover */
+.kull-element.ikke-klikkbar {
+    cursor: default;
+}
+
+.kull-element .kull-navn {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.kull-element .kull-detalj {
+    font-size: 14px;
+    color: #5f5e5a;
+}
+
+/* ========================================
+   HUNDEOVERSIKT - kort med bilde + navn
+   ======================================== */
+.hund-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.hund-kort {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.hund-kort:hover {
+    border-color: #b4b2a9;
+    transform: translateY(-2px);
+}
+
+.hund-kort img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+.hund-kort .hund-info {
+    padding: 12px 16px;
+}
+
+.hund-kort .hund-navn {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.hund-kort .hund-detalj {
+    font-size: 13px;
+    color: #5f5e5a;
+}
+
+/* Underavsnitt på oversiktssider */
+.seksjon-tittel {
+    font-size: 14px;
+    color: #888780;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+/* ========================================
+   FORELDRE-KORT - kompakt på kullsider
+   ======================================== */
+.foreldre-kompakt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.forelder-kort {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+/* Hover KUN på klikkbare foreldre-kort */
+a.forelder-kort:hover {
+    border-color: #b4b2a9;
+    transform: translateY(-2px);
+}
+
+/* Ikke-klikkbare foreldre-kort (eksterne hunder) */
+.forelder-kort.ikke-klikkbar {
+    cursor: default;
+}
+
+.forelder-kort img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+.forelder-kort .forelder-info {
+    padding: 10px 14px;
+}
+
+.forelder-kort .forelder-label {
+    font-size: 11px;
+    color: #888780;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.forelder-kort .forelder-navn {
+    font-weight: 500;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.forelder-kort .forelder-kallenavn {
+    font-size: 13px;
+    color: #5f5e5a;
+    font-style: italic;
+}
+
+/* ========================================
+   VALPE-GRID - 3 per rad på kullsider
+   ======================================== */
+.valpe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.valpe-kort {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+/* Hover KUN på klikkbare valpe-kort */
+a.valpe-kort:hover {
+    border-color: #b4b2a9;
+    transform: translateY(-2px);
+}
+
+.valpe-kort img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+.valpe-kort .valpe-info {
+    padding: 10px 12px;
+}
+
+.valpe-kort .valpe-navn {
+    font-weight: 500;
+    margin-bottom: 2px;
+    font-size: 13px;
+}
+
+.valpe-kort .valpe-detalj {
+    font-size: 12px;
+    color: #5f5e5a;
+}
+
+/* ========================================
+   ETTERKOMMER-GRID - 4 per rad, kompakte kort
+   ======================================== */
+.etterkommer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.etterkommer-kort {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.etterkommer-kort:hover {
+    border-color: #b4b2a9;
+    transform: translateY(-2px);
+}
+
+.etterkommer-kort img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+.etterkommer-kort .info {
+    padding: 8px 10px;
+}
+
+.etterkommer-kort .navn {
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+.etterkommer-kort .detalj {
+    font-size: 11px;
+    color: #5f5e5a;
+}
+
+/* ========================================
+   KULL-KORT - bred boks med mor/far-bilder
+   ======================================== */
+.kull-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.kull-kort {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.kull-kort:hover {
+    border-color: #b4b2a9;
+    transform: translateY(-2px);
+}
+
+.kull-kort .kull-info {
+    padding: 8px 20px;
+    border-bottom: 1px solid #e5e5e0;
+}
+
+.kull-kort .kull-navn {
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+
+.kull-kort .kull-detalj {
+    font-size: 14px;
+    color: #5f5e5a;
+}
+
+/* Foreldre side om side (på kull-oversikt) */
+.foreldre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #e5e5e0;
+}
+
+.forelder-bilde {
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.forelder-bilde img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+.forelder-tekst {
+    padding: 4px 16px;
+}
+
+.forelder-label {
+    font-size: 12px;
+    color: #888780;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.forelder-navn {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.forelder-detalj {
+    font-size: 14px;
+    color: #5f5e5a;
+    font-style: italic;
+}
+
+/* ========================================
+   UTSTILLINGER - oversiktsside
+   ======================================== */
+.utstilling-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.utstilling-kort {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+a.utstilling-kort:hover {
+    border-color: #b4b2a9;
+    transform: translateY(-2px);
+}
+
+.utstilling-kort .utstilling-info {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e5e0;
+}
+
+.utstilling-kort .utstilling-navn {
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+
+.utstilling-kort .utstilling-detalj {
+    font-size: 14px;
+    color: #5f5e5a;
+}
+
+/* 2 bilder side om side */
+.utstilling-bilder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #e5e5e0;
+}
+
+.utstilling-bilder img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    background: white;
+}
+
+/* Hovedbildene på detaljsiden (oversikt får ikke border-radius) */
+.utstilling-bilder.hovedbilder {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+/* 2-kolonne deltakerliste under bildene på oversiktskort */
+.utstilling-deltakere {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #e5e5e0;
+}
+
+.utstilling-deltaker {
+    background: white;
+    padding: 12px 16px;
+}
+
+.utstilling-deltaker .deltaker-label {
+    font-size: 12px;
+    color: #888780;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.utstilling-deltaker .deltaker-navn {
+    font-weight: 500;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.utstilling-deltaker .deltaker-tom {
+    font-size: 14px;
+    color: #b4b2a9;
+    font-style: italic;
+}
+
+/* ========================================
+   HUNDEKORT PÅ UTSTILLING-DETALJSIDE
+   Stil basert på kull-kort: tittel + bilde, klikkbart for kritikk
+   ======================================== */
+.utstilling-hund-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.utstilling-hund-kort {
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+details.utstilling-hund-kort {
+    cursor: pointer;
+}
+
+details.utstilling-hund-kort:hover {
+    border-color: #b4b2a9;
+    transform: translateY(-2px);
+}
+
+.utstilling-hund-kort summary {
+    list-style: none;
+    display: block;
+}
+
+.utstilling-hund-kort summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Tittel-blokk: regnavn + resultat (matcher kull-info) */
+.utstilling-hund-info {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e5e0;
+}
+
+.utstilling-hund-navn {
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+
+.utstilling-hund-resultat {
+    font-size: 14px;
+    color: #5f5e5a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 0;
+}
+
+/* Bilde av hunden */
+.utstilling-hund-bilde img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+}
+
+/* Kritikk-blokk - vises direkte under bildet uten ekstra ramme */
+.utstilling-hund-kritikk {
+    padding: 16px 20px;
+}
+
+.utstilling-hund-kritikk p {
+    font-style: italic;
+    font-size: 14px;
+    color: #5f5e5a;
+    margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e0;
+    text-align: center;
+    font-size: 13px;
+    color: #888780;
+}
+
+footer a {
+    color: #5f5e5a;
+}
+
+/* ========================================
+   MOBILTILPASNING - smal skjerm (under 600px)
+   ======================================== */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        padding: 20px;
+        border-radius: 0;
+    }
+    
+    nav .facebook-lenke {
+        margin-left: 0;
+    }
+    
+    .hovedbilde-img {
+        height: 280px;
+    }
+    
+    .forside-bilde {
+        height: 240px;
+    }
+    
+    .stamtavle {
+        grid-template-columns: 1fr;
+    }
+    
+    .foreldre {
+        grid-template-columns: 1fr;
+    }
+    
+    .foreldre-kompakt {
+        grid-template-columns: 1fr;
+    }
+    
+    .valpe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .etterkommer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hundekort-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .utstilling-hund-grid {
+        grid-template-columns: 1fr;
+    }
+}

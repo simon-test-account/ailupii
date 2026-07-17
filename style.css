@@ -841,6 +841,1287 @@ h2 a.kull-overskrift-lenke:hover {
     color: #1a1a1a;
 }
 
+.sok-boks {
+    margin-bottom: 16px;
+}
+
+#sok-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    background: white;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+#sok-input:focus {
+    outline: none;
+    border-color: #b4b2a9;
+}
+
+.sok-status {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #888780;
+}
+
+.sok-resultater { margin-bottom: 24px; }
+.sok-resultater:empty { margin-bottom: 0; }
+
+.sok-treff {
+    padding: 10px 14px;
+    border: 1px solid #e5e5e0;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.sok-treff:hover { border-color: #b4b2a9; background: #faf9f6; }
+
+.sok-treff-navn { font-weight: 500; margin-bottom: 2px; }
+.sok-treff-detalj { font-size: 13px; color: #888780; }
+
+.sok-tomt { color: #888780; font-style: italic; padding: 8px 0; }
+.sok-flere { color: #888780; font-size: 13px; margin-top: 8px; text-align: center; }
+
+.kennel-markor { color: #c4a02f; margin-right: 4px; }
+
+/* === FULL BREDDE I DETALJEMODUS === */
+.container.bred {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* === TRE-OMRÅDE === */
+.tre-omrade { margin-top: 32px; }
+.tre-omrade.hidden { display: none; }
+
+.valgt-hund {
+    border-bottom: 1px solid #e5e5e0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.valgt-hund h2 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+
+.valgt-hund h2 a:hover { border-bottom-color: #b4b2a9; }
+
+/* === KONTROLLER-RAD (knapper + switch) === */
+.kontroller-rad {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+}
+
+button.slekt-knapp {
+    font-family: inherit;
+    cursor: pointer;
+    background: white;
+    padding: 8px 14px;
+    border: 1px solid #e5e5e0;
+    border-radius: 6px;
+    color: #5f5e5a;
+    font-size: 14px;
+    min-width: 40px;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+button.slekt-knapp:hover { border-color: #b4b2a9; }
+
+button.slekt-knapp.aktiv {
+    background: #1a1a1a;
+    color: white;
+    border-color: #1a1a1a;
+}
+
+.slekt-knapper { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* === DETALJE-SWITCH === */
+.detalje-switch {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    user-select: none;
+}
+
+.detalje-switch input { display: none; }
+
+.switch-slider {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    background: #d4d2c9;
+    border-radius: 11px;
+    transition: background 0.2s;
+}
+
+.switch-slider::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.detalje-switch input:checked + .switch-slider { background: #1a1a1a; }
+.detalje-switch input:checked + .switch-slider::before { transform: translateX(18px); }
+
+.switch-label { font-size: 14px; color: #5f5e5a; }
+
+/* === TABELL-OVERSKRIFT (sticky) === */
+.detalje-header {
+    display: none;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    padding: 8px 4px;
+    border-bottom: 1px solid #e5e5e0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888780;
+}
+
+.detalje-header.synlig { display: flex; }
+
+.dh-navn {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-left: 4px;
+}
+
+.dh-data {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: 95px 110px 130px 50px 180px 240px;
+    gap: 12px;
+    min-width: 815px;
+    padding-right: 8px;
+}
+
+/* === SLEKTSTRE === */
+.slektstre,
+.slektstre ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slektstre ul { padding-left: 24px; }
+
+.slektstre li {
+    position: relative;
+    padding: 0 0 0 18px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* L-formet linje */
+.slektstre ul > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-left: 1px solid #b4b2a9;
+    border-bottom: 1px solid #b4b2a9;
+}
+
+/* Vertikal linje fortsetter til neste søsken */
+.slektstre ul > li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    bottom: 0;
+    border-left: 1px solid #b4b2a9;
+}
+
+.slektstre ul > li:last-child::after { display: none; }
+
+/* Roten */
+.slektstre > .slekt-rot {
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.slektstre > .slekt-rot::before,
+.slektstre > .slekt-rot::after { display: none; }
+
+/* === HUND-RAD === */
+.hund-rad {
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background 0.1s;
+}
+
+.hund-rad:hover { background: #f5f5f5; }
+
+.hund-navn {
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Roten - litt større */
+.rot-rad .hund-navn {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.slekt-rot-navn,
+.slekt-rot-navn-lenke {
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.slekt-rot-navn-lenke {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+
+.slekt-rot-navn-lenke:hover { border-bottom-color: #888780; }
+
+/* Partner-rad: kursiv og tynnere */
+.partner-rad .hund-navn {
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Valpe-lenke */
+.slekt-valp-lenke {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+
+.slekt-valp-lenke:hover { border-bottom-color: currentColor; }
+
+.slekt-valp-navn { color: inherit; }
+
+/* === KJØNNSFARGER === */
+.kjonn-tispe .hund-navn,
+.kjonn-tispe .hund-navn a,
+.kjonn-tispe .hund-navn .slekt-valp-lenke,
+.kjonn-tispe .hund-navn .slekt-valp-navn,
+.kjonn-tispe .hund-navn .slekt-rot-navn,
+.kjonn-tispe .hund-navn .slekt-rot-navn-lenke {
+    color: #ff0066;
+}
+
+.kjonn-hann .hund-navn,
+.kjonn-hann .hund-navn a,
+.kjonn-hann .hund-navn .slekt-valp-lenke,
+.kjonn-hann .hund-navn .slekt-valp-navn,
+.kjonn-hann .hund-navn .slekt-rot-navn,
+.kjonn-hann .hund-navn .slekt-rot-navn-lenke {
+    color: #0070c0;
+}
+
+/* === DATA-KOLONNER === */
+.hund-data {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: 95px 110px 130px 50px 180px 240px;
+    gap: 12px;
+    min-width: 815px;
+    font-size: 14px;
+    color: #5f5e5a;
+    padding-right: 8px;
+}
+
+.hund-data span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* I detaljemodus, vis data; ellers skjul */
+.slektstre:not(.detaljemodus) .hund-data { display: none; }
+
+/* Slekt-tom */
+.slekt-tom {
+    color: #888780;
+    font-style: italic;
+    padding: 16px 0;
+}
+
+/* Kullinfo i kompakt modus - tom span er fjernet, men la oss ha en stil hvis brukt */
+.slekt-kull-info {
+    color: #888780;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* ========================================
+   UNDER-NAV (Etterslektstavle / Oversikt)
+   ======================================== */
+.under-nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid #e5e5e0;
+    margin: 0 0 28px;
+}
+
+.under-nav a {
+    padding: 8px 16px;
+    color: #5f5e5a;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s;
+}
+
+.under-nav a:first-child { padding-left: 0; }
+
+.under-nav a:hover { color: #1a1a1a; }
+
+.under-nav a.aktiv {
+    color: #1a1a1a;
+    border-bottom-color: #1a1a1a;
+    font-weight: 500;
+}
+
+/* ========================================
+   FILTER-PANEL
+   ======================================== */
+.filter-panel {
+    margin-bottom: 16px;
+}
+
+.filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: #f8f7f4;
+    border: 1px solid #e5e5e0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #3a3a38;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+
+.filter-toggle:hover { border-color: #b4b2a9; }
+
+.filter-aktive-tell { color: #888780; }
+
+.filter-innhold {
+    display: none;
+    padding: 16px;
+    margin-top: 8px;
+    background: #f8f7f4;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+}
+
+.filter-innhold.aapen { display: block; }
+
+.filter-rad {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.filter-gruppe {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 120px;
+}
+
+.filter-gruppe-lang { min-width: 200px; }
+
+.filter-etikett {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #888780;
+}
+
+.filter-valg {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-valg-lang {
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.filter-sjekkboks {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #3a3a38;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.filter-sjekkboks input { cursor: pointer; }
+
+.filter-sok-input {
+    padding: 5px 8px;
+    border: 1px solid #e5e5e0;
+    border-radius: 4px;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filter-fodt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-fodt input {
+    width: 80px;
+    padding: 5px 8px;
+    border: 1px solid #e5e5e0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.filter-fodt-skille { color: #888780; }
+
+.filter-nullstill {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background: none;
+    border: 1px solid #e5e5e0;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #5f5e5a;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.filter-nullstill:hover { border-color: #b4b2a9; color: #1a1a1a; }
+
+/* ========================================
+   OVERSIKT KONTROLL-RAD
+   ======================================== */
+.oversikt-kontroll-rad {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 16px 0 12px;
+}
+
+.oversikt-status {
+    font-size: 14px;
+    color: #888780;
+    margin: 0;
+    padding-top: 4px;
+    flex: 0 0 auto;
+}
+
+/* ========================================
+   SAMMENLIGN-PANEL
+   ======================================== */
+.sammenlign-panel {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 260px;
+}
+
+.sammenlign-sok-rad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sammenlign-etikett {
+    font-size: 13px;
+    color: #5f5e5a;
+    white-space: nowrap;
+}
+
+.sammenlign-input-wrapper {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+#sammenlign-input {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #e5e5e0;
+    border-radius: 6px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+#sammenlign-input:focus { outline: none; border-color: #b4b2a9; }
+
+.sammenlign-resultater {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e5e5e0;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.sammenlign-treff {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.sammenlign-treff:hover { background: #f8f7f4; }
+
+.sammenlign-treff-navn { font-size: 14px; color: #1a1a1a; }
+
+.sammenlign-treff-detalj { font-size: 12px; color: #888780; }
+
+.sammenlign-valgt { display: flex; flex-direction: column; gap: 6px; }
+
+.sammenlign-valgt.hidden { display: none; }
+
+.sammenlign-valgt-rad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sammenlign-hund-navn {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.sammenlign-fjern {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #888780;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+.sammenlign-fjern:hover { color: #1a1a1a; }
+
+.sammenlign-innstillinger {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.sammenlign-gen-label {
+    font-size: 13px;
+    color: #5f5e5a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sammenlign-gen-input {
+    width: 48px;
+    padding: 3px 6px;
+    border: 1px solid #e5e5e0;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.sammenlign-filtrer {
+    margin-top: 4px;
+}
+
+.sammenlign-filter-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #5f5e5a;
+}
+
+.sammenlign-filter-select {
+    padding: 4px 6px;
+    border: 1px solid #d8d7d0;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #1a1a1a;
+    background: #fff;
+    cursor: pointer;
+}
+
+.sammenlign-ignorer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+    color: #5f5e5a;
+}
+
+.sammenlign-ignorer-tittel { white-space: nowrap; }
+
+.sammenlign-ignorer label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #3a3a38;
+}
+
+/* ========================================
+   NAVN-SØK
+   ======================================== */
+.navn-sok-rad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.navn-sok-input {
+    width: 280px;
+    padding: 7px 10px;
+    border: 1px solid #d8d7d0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1a1a1a;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.navn-sok-input:focus {
+    border-color: #888780;
+}
+
+.nullstill-alle-knapp {
+    padding: 7px 14px;
+    border: 1px solid #d8d7d0;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #f8f7f4;
+    color: #5f5e5a;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nullstill-alle-knapp:hover {
+    background: #eeedea;
+    color: #1a1a1a;
+}
+
+/* ========================================
+   OVERSIKT-TABELL
+   ======================================== */
+.tabell-omrade {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #e5e5e0;
+}
+
+.oversikt-tabell {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: fixed;
+}
+
+/* Kolonnebredder settes som inline style i byggTabellHeader() i oversikt.js */
+
+.oversikt-tabell td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.oversikt-tabell th {
+    text-align: left;
+    padding: 8px 6px;
+    background: #f8f7f4;
+    border-bottom: 3px solid #c8c7c0;
+    color: #5f5e5a;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.oversikt-tabell td {
+    padding: 7px 6px 7px 6px;
+    border-bottom: 1px solid #f0efe8;
+    color: #1a1a1a;
+    vertical-align: middle;
+}
+
+.oversikt-tabell tr:hover td { background: #faf9f6; }
+
+.oversikt-tabell a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+
+.oversikt-tabell a:hover { border-bottom-color: #888780; }
+
+/* Navnefarge etter kjønn (tispe = rosa, hann = blå) */
+.oversikt-tabell td.navn-tispe,
+.oversikt-tabell td.navn-tispe a { color: #ff0066; }
+
+.oversikt-tabell td.navn-hann,
+.oversikt-tabell td.navn-hann a { color: #0070c0; }
+
+/* === KOLONNEHEADER MED FILTER === */
+.kol-th {
+    padding: 0 0 0 6px !important;
+    white-space: nowrap;
+}
+
+.kol-header {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 4px 8px 12px;
+}
+
+.kol-tittel {
+    flex: 1 1 auto;
+}
+
+.sorterbar { cursor: pointer; user-select: none; }
+.sorterbar:hover { color: #1a1a1a; }
+.sorterbar.aktiv { color: #1a1a1a; }
+
+.kol-filter-knapp {
+    flex: 0 0 auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c8c6bf;
+    font-size: 11px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    line-height: 1;
+    transition: color 0.1s, background 0.1s;
+}
+
+.kol-filter-knapp:hover {
+    color: #5f5e5a;
+    background: #e8e7e3;
+}
+
+.kol-filter-knapp.har-filter {
+    color: #5a7a4f;
+    background: #e8f0e5;
+}
+
+/* === FILTER DROPDOWN === */
+.kol-filter-dropdown {
+    display: none;
+    min-width: 200px;
+    max-width: 280px;
+    background: white;
+    border: 1px solid #d8d7d0;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    z-index: 200;
+    padding: 8px 0 0;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #1a1a1a;
+}
+
+.kol-filter-dropdown.aapen { display: block; }
+
+.dropdown-sok {
+    display: block;
+    width: calc(100% - 16px);
+    margin: 0 8px 6px;
+    padding: 5px 8px;
+    border: 1px solid #e5e5e0;
+    border-radius: 4px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.dropdown-sok:focus { outline: none; border-color: #b4b2a9; }
+
+.dropdown-liste {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0 0 4px;
+}
+
+.dropdown-sjekkboks {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-sjekkboks:hover { background: #f8f7f4; }
+
+.dropdown-sjekkboks input[type=checkbox] { margin: 0; cursor: pointer; }
+
+.dropdown-sjekkboks-fremhevet { font-weight: 500; color: #1a1a1a; }
+
+.dropdown-skille {
+    border-top: 1px solid #e5e5e0;
+    margin: 4px 0;
+}
+
+.dropdown-bunn {
+    display: flex;
+    gap: 8px;
+    padding: 6px 12px 8px;
+    border-top: 1px solid #f0efe8;
+}
+
+.dropdown-velg-kun-disse,
+.dropdown-nullstill-felt {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #888780;
+    padding: 2px 0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.dropdown-velg-kun-disse:hover,
+.dropdown-nullstill-felt:hover { color: #1a1a1a; }
+
+/* Født-dropdown */
+#dropdown-fodt { max-width: none; }
+
+.dropdown-fodt {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 18px 14px;
+    min-width: 340px;
+}
+
+.fodt-slider-rad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fodt-dual-slider {
+    position: relative;
+    flex: 1;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.fodt-slider-track {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    background: #e0dfd8;
+    border-radius: 2px;
+}
+
+.fodt-slider-fill {
+    position: absolute;
+    height: 100%;
+    background: #5a7a4f;
+    border-radius: 2px;
+}
+
+.fodt-dual-slider input[type=range] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    margin: 0;
+    height: 20px;
+}
+
+.fodt-dual-slider input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    margin-top: -6px;
+    border-radius: 50%;
+    background: #5a7a4f;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+.fodt-dual-slider input[type=range]::-webkit-slider-runnable-track {
+    background: transparent;
+    height: 4px;
+}
+
+.fodt-dual-slider input[type=range]::-moz-range-thumb {
+    pointer-events: all;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #5a7a4f;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+.fodt-dual-slider input[type=range]::-moz-range-track {
+    background: transparent;
+    height: 4px;
+}
+
+.dropdown-fodt-input {
+    width: 68px;
+    padding: 5px 8px;
+    border: 1px solid #e5e5e0;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.dropdown-fodt-input:focus { outline: none; border-color: #b4b2a9; }
+
+.dropdown-nullstill-fodt {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #888780;
+    padding: 2px 0;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.dropdown-nullstill-fodt:hover { color: #1a1a1a; }
+
+/* Søk-tomt */
+.sok-tomt { padding: 8px 12px; color: #888780; font-size: 13px; margin: 0; }
+
+.td-dato, .td-regnr { white-space: nowrap; color: #5f5e5a; }
+
+.td-sammenlign-ignorert { color: #c8c6bf; }
+
+.td-sammenlign-selv { color: #b4b2a9; font-style: italic; font-size: 13px; }
+
+/* === VALGT HUND MED FAKTABOKS === */
+.valgt-hund {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.valgt-hund-tekst { flex: 1 1 auto; }
+
+.fakta-boks {
+    flex: 0 0 auto;
+    background: #f8f7f4;
+    border: 1px solid #e5e5e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    min-width: 170px;
+}
+
+.fakta-boks.hidden { display: none; }
+
+.fakta-tittel {
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #888780;
+    margin-bottom: 8px;
+}
+
+.fakta-rad {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 2px 0;
+    color: #3a3a38;
+}
+
+.fakta-rad-total {
+    border-top: 1px solid #e5e5e0;
+    margin-top: 6px;
+    padding-top: 6px;
+    font-weight: 500;
+}
+
+.fakta-tall { font-variant-numeric: tabular-nums; }
+
+/* === KOLLAPS-TOGGLE === */
+.kollaps-toggle {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 8px;
+    color: #b4b2a9;
+    margin-right: 3px;
+    border-radius: 3px;
+    transition: color 0.1s, background 0.1s;
+    user-select: none;
+}
+
+.kollaps-toggle:hover {
+    color: #5f5e5a;
+    background: #e8e7e3;
+}
+
+.kollaps-spacer {
+    flex: 0 0 19px; /* samme bredde som toggle + margin */
+}
+
+/* ========================================
+   VISNINGSBYTTER (Liste / Tavle)
+   ======================================== */
+.visning-bytter {
+    display: inline-flex;
+    border: 1px solid #d8d7d0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.visning-knapp {
+    border: none;
+    background: #fff;
+    padding: 7px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #5f5e5a;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.visning-knapp + .visning-knapp { border-left: 1px solid #e5e5e0; }
+
+.visning-knapp:hover { background: #f4f3ef; }
+
+.visning-knapp.aktiv { background: #1a1a1a; color: #fff; }
+
+/* ========================================
+   ANETAVLE – VANNRETT STAMTAVLE (TAVLE-VISNING)
+   ======================================== */
+.ped-scroll {
+    --ped-linje: #c2cfdf;
+    --ped-rad-gap: 7px;
+    overflow-x: auto;
+    padding: 8px 2px 20px;
+}
+
+.ped-tre { display: inline-block; }
+
+.ped-node {
+    display: flex;
+    align-items: center;
+}
+
+.ped-selv { flex: 0 0 auto; }
+
+/* Foreldre-kolonnen til høyre for hver hund.
+   To like høye rader (1fr 1fr) gjør at hver hund havner nøyaktig
+   midt mellom sine to foreldre, uansett hvor ulik dybde grenene har. */
+.ped-foreldre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: var(--ped-rad-gap);
+    position: relative;
+    padding-left: 40px;
+}
+
+.ped-foreldre > .ped-node {
+    position: relative;
+}
+
+/* Stamme: vannrett linje fra kortet ut til den loddrette streken */
+.ped-foreldre::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    border-top: 2px solid var(--ped-linje);
+}
+
+/* Avstikker: vannrett linje fra streken inn til hver forelder */
+.ped-foreldre > .ped-node::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    border-top: 2px solid var(--ped-linje);
+}
+
+/* Loddrett strek – hver forelder tegner sin halvdel fra eget senter */
+.ped-foreldre > .ped-node::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    border-left: 2px solid var(--ped-linje);
+}
+
+.ped-foreldre > .ped-node:first-child::after { top: 50%; bottom: calc(-0.5 * var(--ped-rad-gap)); }
+.ped-foreldre > .ped-node:last-child::after  { top: calc(-0.5 * var(--ped-rad-gap)); bottom: 50%; }
+
+/* Kun én kjent forelder: ingen loddrett strek */
+.ped-foreldre--enkelt > .ped-node::after { display: none; }
+
+/* Hund-kort i tavlen */
+.ped-kort {
+    background: #fff;
+    border: 1px solid #e3e2dc;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    padding: 7px 11px;
+    width: 172px;
+    box-sizing: border-box;
+}
+
+.ped-kort--rot {
+    border-color: #c9c8c1;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.10);
+}
+
+.ped-kort-navn {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ped-kort.kjonn-hann  .ped-navn,
+.ped-kort.kjonn-hann  .ped-navn-lenke { color: #0070c0; }
+
+.ped-kort.kjonn-tispe .ped-navn,
+.ped-kort.kjonn-tispe .ped-navn-lenke { color: #ff0066; }
+
+.ped-navn-lenke {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+
+.ped-navn-lenke:hover { border-bottom-color: currentColor; }
+
+.ped-kjonn { font-size: 11px; opacity: 0.85; }
+
+.ped-meta {
+    font-size: 11px;
+    color: #8a897f;
+    margin-top: 2px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.ped-coi { color: #5f5e5a; }
+
+/* ========================================
+   ANETAVLE – LISTE-VISNING (far over / mor under, som tavlen)
+   ======================================== */
+.ane-liste {
+    font-size: 15px;
+    position: relative;
+    padding-left: 14px; /* plass til rotens gren-stamme */
+}
+
+/* Hver fars-/morsgren rykkes inn */
+.ane-gren {
+    padding-left: 24px;
+}
+
+/* Radene males over gren-linjene */
+.ane-liste .hund-rad {
+    position: relative;
+    z-index: 1;
+}
+
+/* SVG-overlay med gren-linjer (stamme opp til far, ned til mor) */
+.ane-konnektorer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ane-konnektorer line {
+    stroke: #c6cedb;
+    stroke-width: 1.5;
+}
+
 /* ========================================
    MOBILTILPASNING - smal skjerm (under 600px)
    ======================================== */

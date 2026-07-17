@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anetavle - Kennel Ailupii</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="hoved-container">
+
+    <nav>
+        <a href="index.html">Forsiden</a>
+        <a href="vare-hunder.html">Våre hunder</a>
+        <a href="kull.html">Kull</a>
+        <a href="etterkommere.html">Etterkommere</a>
+        <a href="utstillinger.html">Utstillinger</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="https://www.facebook.com/groups/1776603400416029" class="facebook-lenke" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+
+    <nav class="under-nav">
+        <a href="anetavle.html" class="aktiv">Anetavle</a>
+        <a href="slektstre.html">Etterslektstavle</a>
+        <a href="oversikt.html">Oversikt</a>
+    </nav>
+
+    <h1>Anetavle</h1>
+    <p class="kallenavn">Søk etter en finsk lapphund for å se hennes/hans forfedre</p>
+
+    <div id="anetavle-app">
+        <div class="sok-boks">
+            <input type="text" id="sok-input" placeholder="Søk etter navn eller registreringsnummer..." autocomplete="off">
+            <p class="sok-status" id="sok-status">Laster data...</p>
+        </div>
+
+        <div id="sok-resultater" class="sok-resultater"></div>
+
+        <div id="tre-omrade" class="tre-omrade hidden">
+            <div class="valgt-hund">
+                <div class="valgt-hund-tekst">
+                    <h2 id="valgt-navn"></h2>
+                    <p id="valgt-info" class="kallenavn"></p>
+                </div>
+                <div id="fakta-boks" class="fakta-boks hidden"></div>
+            </div>
+
+            <div class="kontroller-rad">
+                <div class="visning-bytter" id="visning-bytter">
+                    <button class="visning-knapp aktiv" data-visning="tre">Liste</button>
+                    <button class="visning-knapp" data-visning="tavle">Tavle</button>
+                </div>
+                <div class="slekt-knapper" id="slekt-knapper">
+                    <!-- Knapper genereres dynamisk basert på maks dybde -->
+                </div>
+                <label class="detalje-switch" id="detalje-bryter">
+                    <input type="checkbox" id="detalje-toggle">
+                    <span class="switch-slider"></span>
+                    <span class="switch-label">Detaljemodus</span>
+                </label>
+                <label class="detalje-switch tavle-bryter" style="display:none">
+                    <input type="checkbox" id="farge-toggle" checked>
+                    <span class="switch-slider"></span>
+                    <span class="switch-label">Farge</span>
+                </label>
+                <label class="detalje-switch tavle-bryter" style="display:none">
+                    <input type="checkbox" id="hd-toggle" checked>
+                    <span class="switch-slider"></span>
+                    <span class="switch-label">HD</span>
+                </label>
+            </div>
+
+            <!-- Tabell-overskrift (vises kun i detaljemodus, sticky) -->
+            <div class="detalje-header" id="detalje-header">
+                <span class="dh-navn">Navn</span>
+                <span class="dh-data">
+                    <span>Født</span>
+                    <span>Reg.nr</span>
+                    <span>Farge</span>
+                    <span>HD</span>
+                    <span>Øyne</span>
+                    <span>Eier / (Oppdretter)</span>
+                </span>
+            </div>
+
+            <div id="tre-innhold"></div>
+        </div>
+
+        <noscript>
+            <p style="padding:20px;background:#f1efe8;border-radius:8px;">
+                Denne siden krever JavaScript.
+            </p>
+        </noscript>
+    </div>
+
+    <footer>
+        Kennel Ailupii · Følg oss på <a href="https://www.facebook.com/groups/1776603400416029" target="_blank" rel="noopener">Facebook</a> for siste nytt
+    </footer>
+
+</div>
+
+<script src="anetavle.js"></script>
+
+</body>
+</html>
